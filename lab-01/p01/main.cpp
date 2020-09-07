@@ -1,6 +1,8 @@
 #include <iostream>
 
-int main()
-{
-    std::cout << "hey\n";
+using namespace std;
+
+int main(){
+    cout << "Hello " << __cplusplus << "!\n";
+    return 0;
 }
