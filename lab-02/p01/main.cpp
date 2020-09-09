@@ -1,11 +1,47 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    int x = 4;
-    cout << x << "\n";
+    int inp;
+    while(cin >> inp && inp != 0)
+    {
+        if(inp == 0)
+        break;
 
+        //GET SUM OF INPUT'S DIGITS
+        int sumOfInp = 0;
+        int t = inp;
+
+        while(t > 0)
+            {
+                sumOfInp += t%10;
+                t /= 10;
+            }
+
+        int startNum = 11;
+
+        while(true)
+        {
+            int production = startNum * inp;
+            int sumOfProd = 0;
+
+            //sum of production
+            while(production > 0)
+            {
+                sumOfProd += production%10;
+                production /= 10;
+            }
+
+            if(sumOfInp == sumOfProd){
+                cout<< startNum << endl;
+                break;
+            }else{
+                startNum++;
+            }
+
+
+        }
+    }
     return 0;
 }
