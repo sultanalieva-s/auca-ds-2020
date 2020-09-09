@@ -9,7 +9,6 @@ int main()
         if(inp == 0)
         break;
 
-        //GET SUM OF INPUT'S DIGITS
         int sumOfInp = 0;
         int t = inp;
 
@@ -25,8 +24,6 @@ int main()
         {
             int production = startNum * inp;
             int sumOfProd = 0;
-
-            //sum of production
             while(production > 0)
             {
                 sumOfProd += production%10;
@@ -39,8 +36,6 @@ int main()
             }else{
                 startNum++;
             }
-
-
         }
     }
     return 0;
