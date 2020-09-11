@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -8,7 +9,9 @@ int main()
 
     //factor = total of citations / articles
     // citations = articles * factor
-    int scientists = articles * impactFactor;
+
+    int scientists = ceil(articles *  (double)(impactFactor - 0.99));
+
 
     cout << scientists << endl;
 }
