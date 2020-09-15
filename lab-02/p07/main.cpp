@@ -16,6 +16,6 @@ int main()
         spent += in;
         t++;
     }
-    int res = mb * months - spent + 10;
+    int res = mb * months - spent + mb;
     cout << res << endl;
 }
