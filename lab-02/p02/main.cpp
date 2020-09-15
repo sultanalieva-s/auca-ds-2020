@@ -1,17 +1,14 @@
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
-int main()
-{
-    int articles, impactFactor;
-    cin >> articles >> impactFactor;
+int main(){
+    int iterations;
+    cin >> iterations;
 
-    //factor = total of citations / articles
-    // citations = articles * factor
+    int points = pow((iterations * 2 + 1), 2);
 
-    int scientists = ceil(articles *  (double)(impactFactor - 0.99));
+    cout << points << endl;
 
-
-    cout << scientists << endl;
 }
