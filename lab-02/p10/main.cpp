@@ -8,13 +8,13 @@ int main()
 
     cin >> easy >> med >> hard >> total;
     
-    if(easy == 0 || med == 0 || hard == 0 || easy+med+hard < total)
+    if(easy == 0 || med == 0 || hard == 0 || easy+med+hard >= total)
     {
-        cout << "NO";
+        cout << "NO" << endl;
     }
     else
     {
-        cout << "YES";
+        cout << "YES" << endl;
     }
     
 
