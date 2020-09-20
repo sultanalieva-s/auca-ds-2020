@@ -29,7 +29,7 @@ int main()
         if (min > maximums[i])
         {
             min = maximums[i];
-            index = 0;
+            index = i;
         }
     }
     index++;
