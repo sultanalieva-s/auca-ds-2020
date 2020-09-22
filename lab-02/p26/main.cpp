@@ -8,7 +8,7 @@ int main()
 
     while (t != 0)
     {
-        int p, r, f;
+        long long p, r, f;
 
         cin >> p >> r >> f;
         int count = 0;
