@@ -14,10 +14,10 @@ int main()
         string inp;
         getline(cin, inp);
 
-        if (inp.size() == 3)
+        if (inp != "P=NP")
         {
-            int a = stoi(inp.substr(0, 1));
-            int b = stoi(inp.substr(1));
+            int a = stoi(inp.substr(0, inp.find('+')));//change limits
+            int b = stoi(inp.substr(inp.find('+')));//change limits
 
             cout << a + b << endl;
         }
