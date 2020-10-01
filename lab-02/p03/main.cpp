@@ -1,8 +1,12 @@
 #include <iostream>
+#include <cmath>
 
-//roman: 4854 paces
-// modern: 5280 feet
-//eng miles into roman paces: 
+using namespace std;
 
-// input: eng miles
-// output: roman paces  
+int main()
+{
+    double n;
+    cin>>n;
+    double o = 1000 * (double(5280)/4854) * n;
+    cout<<ceil(o)<<endl;
+}
