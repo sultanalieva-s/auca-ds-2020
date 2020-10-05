@@ -16,6 +16,7 @@ int main()
         {
             hasbeensnowed = true;
             index = i;
+            break;
         }
 
     }
