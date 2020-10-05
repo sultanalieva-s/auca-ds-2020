@@ -6,8 +6,10 @@ using namespace std;
 int main()
 {
     int t, mcount, previous;
-    cin >> t;
     vector<int> inps;
+
+    cin >> t;
+
     while (t != 0)
     {
         int in;
@@ -24,7 +26,9 @@ int main()
         }
         t--;
     }
+
     bool iscorrect = true;
+
     for (int i = 0; i < inps.size(); i++)
     {
         if (i + 1 != inps[i])
@@ -32,12 +36,7 @@ int main()
             iscorrect = false;
         }
     }
-    if (iscorrect)
-    {
-        cout << "makes sense" << endl;
-    }
-    else
-    {
-        cout << "something is fishy" << endl;
-    }
+
+    string o = iscorrect ? "makes sense" : "something is fishy";
+    cout<<o<<endl;
 }

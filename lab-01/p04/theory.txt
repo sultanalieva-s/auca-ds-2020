@@ -1,0 +1,2 @@
+value semantics: c++ by deafault -> *for refernces use pointers
+reference semantics: java non-primitive types
