@@ -5,32 +5,36 @@ using namespace std;
 int main()
 {
     string in;
-    cin>>in;
+    while (cin >> in && in.find(' ') != string::npos)
 
-    int t;
-    cin>>t;
-    while(t!=0)
     {
-        int a,b;
-        cin>>a>>b;
-        bool issame = true;
-        for(int i = min(a, b)+1; i < max(a,b); i++)
+        int t;
+        cin >> t;
+        int casse = 1;
+        while (t != 0)
         {
-            if(in[i]!= in[i-1])
+            int a, b;
+            cin >> a >> b;
+            bool issame = true;
+            for (int i = min(a, b) + 1; i <= max(a, b); i++)
             {
-                issame = false;
+                if (in[i] != in[i - 1])
+                {
+                    issame = false;
+                    break;
+                }
             }
+            cout << "Case " << casse << ":" << endl;
+            if (issame)
+            {
+                cout << "Yes" << endl;
+            }
+            else
+            {
+                cout << "No" << endl;
+            }
+            casse++;
+            t--;
         }
-        if(issame)
-        {
-            cout<<"Yes"<<endl;
-        }
-        else
-        {
-            cout<<"No"<<endl;
-        }
-        
-        t--;
     }
-
 }
