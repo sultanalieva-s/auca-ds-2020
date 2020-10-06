@@ -6,21 +6,16 @@ int main()
 {
     int t;
     cin >> t;
-    vector<long long> inps;
+    int min = INT8_MAX;
+    int index;
     for(int i = 0; i < t; i++)
     {
-        long long in;
+        int in;
         cin>>in;
-        inps.push_back(in);
-    }
-    long long min = inps[0];
-    int index = 0;
-    for(int i = 1; i< inps.size(); i++)
-    {
-        if(min > i)
+        if(in < min)
         {
-            min = inps[i];
-            index = i;
+            min = in;
+            index= i;
         }
     }
     cout<<index<<endl;
