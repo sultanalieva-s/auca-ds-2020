@@ -5,12 +5,15 @@ using namespace std;
 int main()
 {
     string in;
-    while (cin >> in && in.find(' ') != string::npos)
+    int casse = 1;
+
+    while (cin >> in)
 
     {
         int t;
         cin >> t;
-        int casse = 1;
+        cout << "Case " << casse << ":" << endl;
+        casse++;
         while (t != 0)
         {
             int a, b;
@@ -24,7 +27,7 @@ int main()
                     break;
                 }
             }
-            cout << "Case " << casse << ":" << endl;
+
             if (issame)
             {
                 cout << "Yes" << endl;
@@ -33,7 +36,6 @@ int main()
             {
                 cout << "No" << endl;
             }
-            casse++;
             t--;
         }
     }
