@@ -7,23 +7,27 @@ int main()
     int a, b, c;
     cin >> a >> b >> c;
 
-    if (b < a)
+    if(a>b)
     {
-        swap(a, b);
+        swap(a,b);
     }
 
-    if (c < b)
+    if(b > c)
     {
-        swap(c, b);
+        swap(b, c);
     }
 
-    if (b - a != c - b)
+    if(a > b)
     {
-        int step = min(b - a, c - b);
-        cout << c - step << endl;
+        swap(a,b);
     }
-    else
+
+    if(b-a == c-b)
     {
-        cout << c + (c - b) << endl;
+        cout<<c+c-b<<endl;
+    }
+    else if(b - a < c - b)
+    {
+        cout << c - (b-a) << endl;
     }
 }
