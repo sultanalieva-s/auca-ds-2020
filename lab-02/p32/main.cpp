@@ -1,47 +1,71 @@
 #include <iostream>
 using namespace std;
 
-int sumOfDigits(int num);
-
 int main()
 {
-    int inp;
-    while (cin >> inp && inp != 0)
+    int a1, a2, b1, b2;
+    while (cin >> a1 >> a2 >> b1 >> b2 && a1 != 0 && a2 != 0 && b1 != 0 && b2 != 0)
     {
-        if (inp == 0)
-            break;
-
-        int sumOfInp = sumOfDigits(inp);
-        int startNum = 11;
-
-        while (true)
+        bool isTie = false;
+        bool isFirst = false;
+        if (a1 + a2 == 3 || b1 + b2 == 3)
         {
-            int production = startNum * inp;
-            int sumOfProd = sumOfDigits(production);
-
-            if (sumOfInp == sumOfProd)
+            if (a1 + a2 == b1 + b2)
             {
-                cout << startNum << endl;
-                break;
+                isTie = true;
             }
-            else
+            else if (a1 + a2 == 3)
             {
-                startNum++;
+                isFirst = true;
             }
         }
-    }
+        else if (a1 == a2 || b1 == b2)
+        {
+            if (a1 == b1)
+            {
+                isTie = true;
+            }
+            else if (a1 > b1)
+            {
+                isFirst = true;
+            }
+        }
+        else
+        {
+            if (a1 < a2)
+            {
+                swap(a1, a2);
+            }
+            if (b1 < b2)
+            {
+                swap(b1, b2);
+            }
 
-    return 0;
-}
+            int a = 10 * a1 + a2;
+            int b = 10 * b1 + b2;
 
-int sumOfDigits(int num)
-{
-    int sum = 0;
-    int t = num;
-    while (t > 0)
-    {
-        sum += t % 10;
-        t /= 10;
+            if (a == b)
+            {
+                isTie = true;
+            }
+
+            if (a > b)
+            {
+                isFirst = true;
+            }
+        }
+
+        if (isFirst)
+        {
+            cout << "Player 1 wins." << endl;
+        }
+        else if (isTie)
+        {
+            cout << "Tie." << endl;
+        }
+        else
+        {
+            cout << "Player 2 wins." << endl;
+        }
     }
-    return sum;
 }
