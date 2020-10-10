@@ -25,10 +25,19 @@ int main()
             {
                 isTie = true;
             }
-            else if (a1 == a2)
+            else if (a1 == a2 && b1 == b2)
+            {
+                if(a1>b1)
+                {
+                    isFirst = true;
+                }
+            }
+            else if(a1 == a2)
             {
                 isFirst = true;
             }
+            
+            
         }
         else
         {
