@@ -21,11 +21,11 @@ int main()
         }
         else if (a1 == a2 || b1 == b2)
         {
-            if (a1 == b1)
+            if (a1==b1 && a2 == b2)
             {
                 isTie = true;
             }
-            else if (a1 > b1)
+            else if (a1 == a2)
             {
                 isFirst = true;
             }
