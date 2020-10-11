@@ -21,5 +21,6 @@ int main()
         }
 
         cout << i + 2 << endl;
+        
     }
 }
