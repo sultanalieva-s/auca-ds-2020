@@ -2,31 +2,24 @@
 #include <string>
 using namespace std;
 
-int sumOfDigits(int num)
-{
-    int d = 0;
-    while (num != 0)
-    {
-        d++;
-        num /= 10;
-    }
-    return d;
-}
-
 int main()
 {
     string in;
 
     while (cin >> in && in != "END")
     {
-        int inp = stoi(in);
+
+        string size = to_string(in.size());
+        string nextsize = to_string(size.size());
         int i = 0;
 
-        while (sumOfDigits(sumOfDigits(inp)) != sumOfDigits(inp))
+        while (size != nextsize)
         {
             i++;
-            inp = sumOfDigits(inp);
+            size = to_string(size.size());
+            nextsize = to_string(size.size());
         }
+
         cout << i + 2 << endl;
     }
 }
