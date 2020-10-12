@@ -31,85 +31,102 @@ int main()
 
             m--;
         }
+        sort(gms.begin(), gms.end());
+        sort(mms.begin(), mms.end());
+        bool isGLost = false;
 
-        int ming = gms[0];
-        int minm = mms[0];
-        int sizegms = gms.size();
-        int sizemms = mms.size();
-        while (sizegms != 0 || sizemms != 0)
+        if (gms.size() == 1 || mms.size() == 1)
         {
-            for (int i : gms)
+            if (gms.size() == mms.size())
             {
-                ming = ming > i ? i : ming;
-            }
-            for (int i : mms)
-            {
-                minm = minm > i ? i : minm;
-            }
-
-            if (ming != minm)
-            {
-                if (ming > minm)
+                if (gms[0] == mms[0] || gms[0] > mms[0])
                 {
-                    sizemms--;
-                    // auto it = find(mms.begin(), mms.end(), minm);
-                    // if (it != mms.end())
-                    // {
-                    //     mms.erase(it);
-                    // }
-                    // else
-                    // {
-                    //     mms.clear();
-                    // }
-                    
-                    // mms.erase(find(mms.begin(), mms.end(), minm));
+                    cout << "Godzilla" << endl;
                 }
                 else
                 {
-                    sizegms--;
+                    cout << "MechaGodzilla" << endl;
+                }
+            }
+            else if (gms.size() == 1)
+            {
+                int compare = gms[0];
+                int i = 0;
+                while (i < mms.size())
+                {
+                    if (compare < mms[i])
+                    {
+                        isGLost = true;
+                        break;
+                    }
+                    i++;
+                }
 
-                    // auto it = find(gms.begin(), gms.end(), ming);
-                    // if (it != gms.end())
-                    // {
-                    //     gms.erase(it);
-                    // }
-                    // else
-                    // {
-                    //     gms.clear();
-                    // }
-                    
-                    // gms.erase(find(gms.begin(), gms.end(), ming));
+                if (isGLost)
+                {
+                    cout << "MechaGodzilla" << endl;
+                }
+                else
+                {
+                    cout << "Godzilla" << endl;
                 }
             }
             else
             {
-                sizegms--;
-
-                // auto it = find(mms.begin(), mms.end(), ming);
-                // if (it != mms.end())
-                // {
-                //     mms.erase(it);
-                // }
-                // else
-                // {
-                //     mms.clear();
-                // }
-                
-                // mms.erase(find(mms.begin(), mms.end(), minm));
+                if (mms[0] >= gms[0])
+                {
+                    cout << "MechaGodzilla" << endl;
+                }
+                else
+                {
+                    cout << "Godzilla" << endl;
+                }
             }
-        }
-
-        if (sizegms == 0)
-        {
-            cout << "M" << endl;
-        }
-        else if (sizemms == 0)
-        {
-            cout << "G" << endl;
         }
         else
         {
-            cout << "undef" << endl;
+            int gi = 0;
+            int mi = 0;
+            int gmin = gms[0];
+            int mmin = mms[0];
+
+            bool isGLost = false;
+
+            while (true)
+            {
+
+                if (gi == gms.size() - 1)
+                {
+                    isGLost = true;
+                    break;
+                }
+                if (mi == mms.size() - 1)
+                {
+                    isGLost = false;
+                    break;
+                }
+
+                if (gmin == mmin)
+                {
+                    mmin = mms[++mi];
+                }
+                else if (gmin < mmin)
+                {
+                    gmin = gms[++gi];
+                }
+                else if (mmin < gmin)
+                {
+                    mmin = mms[++mi];
+                }
+            }
+            if (isGLost)
+            {
+                cout << "MechaGodzilla" << endl;
+            }
+            else
+            {
+                cout << "Godzilla" << endl;
+            }
         }
 
         t--;
