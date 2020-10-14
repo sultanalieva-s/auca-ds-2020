@@ -5,7 +5,7 @@
 
 using namespace std;
 
-bool isPalindrome(string line)
+bool isPalindrome(const string &line)
 {
     string b;
     for(auto c : line)
@@ -15,7 +15,7 @@ bool isPalindrome(string line)
             b+= tolower(c);
         }
     }
-
+ 
     string t = b;
     reverse(t.begin(), t.end());
 
