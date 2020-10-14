@@ -4,6 +4,7 @@
 using namespace std;
 const int kNameWidth = 25;
 const int kAverageWidth = 40;
+const string noDataMsg = "no data";
 
 int main()
 {
@@ -24,7 +25,7 @@ int main()
         else
         {
             cout << left << setw(kNameWidth) << name << "|"
-                 << right <<setw(kAverageWidth) << "no data" << endl;
+                 << right <<setw(kAverageWidth) << noDataMsg << endl;
         }
 
         if (cin.fail())
