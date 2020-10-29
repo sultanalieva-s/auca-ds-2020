@@ -7,11 +7,18 @@ using namespace std;
 int main()
 {
     int numOfpeople;
+    bool isFirstInp = true;
 
     while (cin >> numOfpeople)
     {
+        if(!isFirstInp)
+        {
+            cout << endl;
+        }
+
         vector<string> names(numOfpeople);
         vector<int> moneyInitial(numOfpeople);
+        vector<bool> hasZeroToGift(numOfpeople, true);
         vector<int> moneyRecieved(numOfpeople, 0);
 
         for (int i = 0; i < numOfpeople; i++)
@@ -44,7 +51,9 @@ int main()
             {
                 int remaining = sumInitial - (sumInitial / numOfpeopleToGift * numOfpeopleToGift);
                 moneyInitial[nameIndex] -= remaining;
+                hasZeroToGift[nameIndex] = false;
             }
+            
 
             for (int j = 0; j < numOfpeopleToGift; j++)
             {
@@ -57,11 +66,13 @@ int main()
             }
         }
 
+
         for (int i = 0; i < numOfpeople; i++)
         {
-            cout << names[i]<<" " << moneyRecieved[i] - moneyInitial[i] << endl;
+            cout << names[i]<<" " << (hasZeroToGift[i] ? moneyRecieved[i] : moneyRecieved[i] - moneyInitial[i]) << endl;
         }
 
-        cout<<endl;
+        isFirstInp = false;
+
     }
 }
