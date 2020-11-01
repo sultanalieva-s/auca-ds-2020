@@ -22,28 +22,38 @@ int main()
         {
             inps.push_back(piece);
         }
-        bool isLoop = true;
 
-        for (int i = 0; i < inps.size(); i++)
+        if(inps.size() == 1)
         {
-            if (i == inps.size() - 1)
+            cout<<"NO LOOP"<<endl;
+            continue;
+        }
+        int countF = 0;
+        int countM = 0;
+
+        for(int i =0; i <inps.size(); i++ )
+        {
+            for(int j = 0; j < inps[i].size(); j++)
             {
-                if (inps[i].at(1) == inps[0].at(0))
+                if(inps[i].at(j) == 'F')
                 {
-                    isLoop = false;
+                    countF++;
                 }
-            }
-            else
-            {
-                if (inps[i].at(1) == inps[i + 1].at(0))
+
+                if(inps[i].at(j) == 'M')
                 {
-                    isLoop = false;
+                    countM++;
                 }
             }
         }
 
-        cout << (isLoop ? "LOOP" : "NO LOOP") << endl;
+        if(countM == countF)
+        {
+            cout<<"LOOP"<<endl;
+        }
+        else
+        {
+            cout<<"NO LOOP"<<endl;
+        }
     }
-
-   
 }
