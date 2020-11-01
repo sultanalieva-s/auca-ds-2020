@@ -1,4 +1,4 @@
-#include "StrUtils.hpp" //ЛИБА
+#include "../../libs/StrUtils.hpp" //ЛИБА
 #include <iostream>
 
 using namespace std;
